@@ -1,0 +1,42 @@
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>La informacion de cualquier pais al instante, en CountryData.com</h1>
+      <p class="lead text-muted">
+        Obtenga acceso a la mas completa informacion sobre cualquier pais del mundo.
+        Utilize el buscador para acceder a nuestro contenido.
+
+      </p>
+      <p>
+        <a  class="btn btn-primary btn-lg my-2"  routerLink="/search">Buscar</a>
+      </p>
+    </div>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let country of countries"  class="col-md-4">
+          <div   class="card mb-4 shadow-sm">
+            <img  class="bd-placeholder-img card-img-top" src={{country.flag}} alt="">
+            <div class="card-body">
+              <p class="card-text">
+               {{country.name}}, {{country.capital}}
+              </p>
+              <p>
+                {{country.subregion}}, {{country.region}}
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" routerLink="/country/{{country.name}}">
+                    View
+                  </a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

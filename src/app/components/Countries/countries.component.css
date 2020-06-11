@@ -1,0 +1,15 @@
+.country_container{
+  margin-top: 5% !important;
+  display: flex;
+  justify-content: center;
+
+}
+.country_card_content{
+display: inline-block;
+
+}
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}

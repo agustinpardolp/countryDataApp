@@ -1,0 +1,56 @@
+<div
+  class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+>
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Busca tu pais!</h1>
+    <p class="lead font-weight-normal">
+     Encuentre toda la informacion referida a los paises. Capitales, idiomas, poblacion,
+     clima, y mas...
+    </p>
+    <form class="form">
+      <input
+      #termino
+      (keyup)="fetchCountriyByName(termino.value)"
+      name = countryName
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <br>
+    </form>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div
+    class="product-device product-device-2 shadow-sm d-none d-md-block"
+  ></div>
+
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let country of selectedCountries" class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img
+            class="bd-placeholder-img card-img-top"
+            src="{{ country.flag }}"
+            alt=""
+          />
+          <div class="card-body">
+            <p class="card-text">{{ country.name }}, {{ country.capital }}</p>
+            <p>{{ country.subregion }}, {{ country.region }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-sm btn-outline-secondary" routerLink="/country/{{country.name}}">
+                  View
+                </a>
+              </div>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
